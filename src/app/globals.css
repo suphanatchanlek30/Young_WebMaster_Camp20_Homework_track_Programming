@@ -1,26 +1,49 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@font-face {
+    font-family: 'LINESeedSansTH';
+    src: url('../../public/fonts/LINESeedSansTH_W_Bd.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@font-face {
+    font-family: 'LINESeedSansTH';
+    src: url('../../public/fonts/LINESeedSansTH_W_He.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@font-face {
+    font-family: 'LINESeedSansTH';
+    src: url('../../public/fonts/LINESeedSansTH_W_Rg.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'LINESeedSansTH';
+    src: url('../../public/fonts/LINESeedSansTH_W_Th.woff2') format('woff2');
+    font-weight: 100;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'LINESeedSansTH';
+    src: url('../../public/fonts/LINESeedSansTH_W_XBd.woff2') format('woff2');
+    font-weight: 800;
+    font-style: normal;
+
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+    font-family: 'LINESeedSansTH', sans-serif;
+}
+
+*, :after, :before {
+    box-sizing: border-box;
+    border: 0 solid #e5e7eb;
 }
