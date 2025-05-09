@@ -2,14 +2,12 @@
 
 import { useState } from "react";
 
-export default function Major() {
-  const [selectedMajor, setSelectedMajor] = useState("");
-
+export default function Major({ selectedMajor, setSelectedMajor }) {
   const majors = [
-    { label1: "Web", label2: "Design", value: "web_design" },
-    { label1: "Web", label2: "Programming", value: "web_programming" },
-    { label1: "Web", label2: "Marketing", value: "web_marketing" },
-    { label1: "Web", label2: "Content", value: "web_content" },
+    { label1: "Web", label2: "Design", value: "design" },
+    { label1: "Web", label2: "Programming", value: "programming" },
+    { label1: "Web", label2: "Marketing", value: "marketing" },
+    { label1: "Web", label2: "Content", value: "content" },
   ];
 
   return (
