@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Icon_Button from "../../../public/Icon_Button_Navbar/discord.png";
-import { athiti } from "../font";
 
 export default function DiscordButton() {
   return (
@@ -13,7 +12,7 @@ export default function DiscordButton() {
         }}
       >
         <Image src={Icon_Button} alt="Discord" width={32} height={32} />
-        <div className={`flex flex-col leading-tight text-center text-xs sm:text-sm font-semibold ${athiti.className}`}>
+        <div className={`flex flex-col leading-tight text-center text-xs sm:text-sm font-semibold`}>
           <span>สอบถามราย</span>
           <span>ละเอียดเพิ่ม</span>
         </div>
