@@ -17,7 +17,7 @@ export default function Navbar() {
           </div>
         </div>
 
-        <div>
+        <div className="flex items-center gap-4">
           <DiscordButton>
             <a href="https://discord.gg/zjuU34Kh" target="_blank" rel=""></a>
           </DiscordButton>

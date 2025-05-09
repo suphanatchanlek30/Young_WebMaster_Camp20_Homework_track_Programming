@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import ResultModal from './ResultDisplay';
+import ResultModal from "./ResultDisplay";
 
 const validMajors = ["design", "programming", "marketing", "content"];
 
@@ -33,11 +33,14 @@ export default function InterviewerID({ selectedMajor }) {
     setError(null);
 
     try {
-      const response = await fetch("https://api.ywc20.ywc.in.th/homework/candidates", {
-        headers: {
-          "x-reference-id": interviewRefNo,
-        },
-      });
+      const response = await fetch(
+        "https://api.ywc20.ywc.in.th/homework/candidates",
+        {
+          headers: {
+            "x-reference-id": interviewRefNo,
+          },
+        }
+      );
 
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
@@ -48,7 +51,8 @@ export default function InterviewerID({ selectedMajor }) {
 
       if (candidatesInMajor) {
         const foundCandidate = candidatesInMajor.find(
-          (candidate) => candidate.interviewRefNo.toUpperCase() === interviewRefNo
+          (candidate) =>
+            candidate.interviewRefNo.toUpperCase() === interviewRefNo
         );
 
         if (foundCandidate) {
@@ -90,11 +94,16 @@ export default function InterviewerID({ selectedMajor }) {
         ตรวจสอบผลการสมัคร
       </h1>
       <p className="text-[14px] md:text-[18px] font-normal text-[#9B9B9B] max-w-md">
-        กรุณากรอกเลขประจำตัวผู้เข้าสัมภาษณ์ (Interviewer ID) เพื่อตรวจสอบผลการสมัครในสาขาที่เลือก
+        กรุณากรอกเลขประจำตัวผู้เข้าสัมภาษณ์ (Interviewer ID)
+        เพื่อตรวจสอบผลการสมัครในสาขาที่เลือก
       </p>
 
-      <form onSubmit={handleSubmit} className="flex flex-col md:flex-row gap-6 mt-6 w-full max-w-3xl justify-center">
-        <div className="flex flex-col text-left text-white w-full md:w-[344px]">
+      <form
+        onSubmit={handleSubmit}
+        className="flex flex-col md:flex-row gap-6 mt-6 w-full max-w-3xl justify-center"
+      >
+        <div className="gap-12 flex flex-col text-left text-white w-full md:w-[344px] justify-center items-center ">
+        <div className="flex flex-col text-left text-white w-full md:w-[344px] ">
           <label className="text-sm font-bold mb-2" htmlFor="interviewRefNo">
             เลขประจำตัวผู้เข้าสัมภาษณ์
           </label>
@@ -110,27 +119,33 @@ export default function InterviewerID({ selectedMajor }) {
         </div>
 
         <button
-          type="submit"
-          className="mt-6 md:mt-0 px-8 py-3 text-white font-semibold rounded-md hover:opacity-90 transition text-sm md:text-base"
-          style={{
-            backgroundImage: "linear-gradient(to left, #FFB623 0%, #FF691D 14%, #F52222 50%, #F81A64 100%)",
-          }}
-          disabled={isLoading || !isMajorValid} // Disable ปุ่มถ้ายังไม่ได้เลือก Major ที่ถูกต้อง
-        >
-          {isLoading ? "กำลังตรวจสอบ..." : "ตรวจสอบ"}
-        </button>
+            type="submit"
+            className="w-full md:w-[140px] h-[54px] text-white font-semibold rounded-md hover:opacity-90 transition text-sm md:text-base"
+            style={{
+              backgroundImage:
+                "linear-gradient(to left, #FFB623 0%, #FF691D 14%, #F52222 50%, #F81A64 100%)",
+            }}
+            disabled={isLoading || !isMajorValid} // Disable ปุ่มถ้ายังไม่ได้เลือก Major ที่ถูกต้อง
+          >
+            {isLoading ? "กำลังตรวจสอบ..." : "ตรวจสอบ"}
+          </button>
+          </div>
       </form>
 
       {!selectedMajor && (
-        <p className="mt-4 text-yellow-500 font-semibold">กรุณาเลือกสาขาที่สมัครก่อนทำการตรวจสอบ</p>
+        <p className="mt-4 text-yellow-500 font-semibold">
+          กรุณาเลือกสาขาที่สมัครก่อนทำการตรวจสอบ
+        </p>
       )}
 
-      {error && (
-        <div className="mt-4 text-red-500 font-semibold">{error}</div>
-      )}
+      {error && <div className="mt-4 text-red-500 font-semibold">{error}</div>}
 
       {isModalOpen && searchResult && (
-        <ResultModal result={searchResult} onClose={closeModal} selectedMajor={selectedMajor} />
+        <ResultModal
+          result={searchResult}
+          onClose={closeModal}
+          selectedMajor={selectedMajor}
+        />
       )}
     </div>
   );
