@@ -11,17 +11,17 @@ export default function Major({ selectedMajor, setSelectedMajor }) {
   ];
 
   return (
-    <div className="flex flex-col items-center text-center px-4 py-10 mb-[100px]">
+    <div className={`flex flex-col items-center text-center px-4 py-10 mb-[10px] md:mb-[100px]`}>
       {/* Title */}
-      <h1 className="text-[22px] md:text-[30px] font-bold text-white">
+      <h1 className={`text-[22px] md:text-[30px] font-bold text-white`}>
         สาขาที่สมัคร
       </h1>
-      <p className="text-[14px] md:text-[18px] font-normal text-[#9B9B9B]">
+      <p className={`text-[14px] md:text-[18px] font-normal text-[#9B9B9B]`}>
         Majors
       </p>
 
       {/* Buttons */}
-      <div className="flex flex-wrap justify-center gap-6 md:gap-24 mt-8">
+      <div className={`flex flex-wrap justify-center gap-6 md:gap-24 mt-8`}>
         {majors.map((major) => (
           <button
             key={major.value}

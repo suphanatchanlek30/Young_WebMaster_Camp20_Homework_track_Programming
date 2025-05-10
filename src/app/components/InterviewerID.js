@@ -89,38 +89,38 @@ export default function InterviewerID({ selectedMajor }) {
   };
 
   return (
-    <div className="flex flex-col items-center gap-4 text-center px-4 py-8">
-      <h1 className="text-[22px] md:text-[30px] font-bold text-white">
+    <div className={`flex flex-col items-center gap-4 text-center px-4 py-8`}>
+      <h1 className={`text-[22px] md:text-[30px] font-bold text-white`}>
         ตรวจสอบผลการสมัคร
       </h1>
-      <p className="text-[14px] md:text-[18px] font-normal text-[#9B9B9B] max-w-md">
+      <p className={`text-[14px] md:text-[18px] font-normal text-[#9B9B9B] max-w-md`}>
         กรุณากรอกเลขประจำตัวผู้เข้าสัมภาษณ์ (Interviewer ID)
         เพื่อตรวจสอบผลการสมัครในสาขาที่เลือก
       </p>
 
       <form
         onSubmit={handleSubmit}
-        className="flex flex-col md:flex-row gap-6 mt-6 w-full max-w-3xl justify-center"
+        className={`flex flex-col md:flex-row gap-6 mt-6 w-full max-w-3xl justify-center`}
       >
-        <div className="gap-12 flex flex-col text-left text-white w-full md:w-[344px] justify-center items-center ">
-        <div className="flex flex-col text-left text-white w-full md:w-[344px] ">
-          <label className="text-sm font-bold mb-2" htmlFor="interviewRefNo">
-            เลขประจำตัวผู้เข้าสัมภาษณ์
-          </label>
-          <input
-            type="text"
-            id="interviewRefNo"
-            placeholder="PG01"
-            className="bg-[#0F0F0F] border border-[#313131] rounded-md text-[16px] md:text-[18px] px-4 py-3 focus:outline-none"
-            value={interviewRefNo}
-            onChange={handleInputChange}
-            required
-          />
-        </div>
+        <div className={`gap-12 flex flex-col text-left text-white w-full md:w-[344px] justify-center items-center `}>
+          <div className={`flex flex-col text-left text-white w-full md:w-[344px]`}>
+            <label className={`text-sm font-bold mb-2`} htmlFor="interviewRefNo">
+              เลขประจำตัวผู้เข้าสัมภาษณ์
+            </label>
+            <input
+              type="text"
+              id="interviewRefNo"
+              placeholder="PG01"
+              className={`bg-[#0F0F0F] border border-[#313131] rounded-md text-[16px] md:text-[18px] px-4 py-3 focus:outline-none`}
+              value={interviewRefNo}
+              onChange={handleInputChange}
+              required
+            />
+          </div>
 
-        <button
+          <button
             type="submit"
-            className="w-full md:w-[140px] h-[54px] text-white font-semibold rounded-md hover:opacity-90 transition text-sm md:text-base"
+            className={`w-full md:w-[140px] h-[54px] text-white font-semibold rounded-md hover:opacity-90 transition text-sm md:text-base`}
             style={{
               backgroundImage:
                 "linear-gradient(to left, #FFB623 0%, #FF691D 14%, #F52222 50%, #F81A64 100%)",
@@ -129,16 +129,16 @@ export default function InterviewerID({ selectedMajor }) {
           >
             {isLoading ? "กำลังตรวจสอบ..." : "ตรวจสอบ"}
           </button>
-          </div>
+        </div>
       </form>
 
       {!selectedMajor && (
-        <p className="mt-4 text-yellow-500 font-semibold">
+        <p className={`mt-4 text-yellow-500 font-bold text-sm md:text-base`}>
           กรุณาเลือกสาขาที่สมัครก่อนทำการตรวจสอบ
         </p>
       )}
 
-      {error && <div className="mt-4 text-red-500 font-semibold">{error}</div>}
+      {error && <div className={`mt-4 text-red-500 font-semibold`}>{error}</div>}
 
       {isModalOpen && searchResult && (
         <ResultModal
