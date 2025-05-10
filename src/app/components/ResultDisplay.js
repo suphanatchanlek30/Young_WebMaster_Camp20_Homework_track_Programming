@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Hero from "../../../public/Image_HomePage/Home_logo.svg";
+import Link from "next/link";
 
 const ResultModal = ({ result, onClose, selectedMajor }) => {
   const getMajorName = (majorValue) => {
@@ -72,20 +73,17 @@ const ResultModal = ({ result, onClose, selectedMajor }) => {
               for Young Webmaster Camp 20
             </p>
             <div className={`text-center`}>
+              <Link href="/details">
               <button
                 className={`text-white text-xs sm:text-sm font-semibold py-2 px-4 rounded-[8px] focus:outline-none focus:shadow-outline`}
                 style={{
                   backgroundImage:
                     `linear-gradient(to left, #FFB623 0%, #FF691D 14%, #F52222 50%, #F81A64 100%)`,
                 }}
-                onClick={() => {
-                  // Uncomment below line if you want to open resume or any other link
-                  // window.open(result.data.resume, "_blank");
-                  alert('More details button clicked!');
-                }}
               >
                 More Details
               </button>
+              </Link>
             </div>
           </div>
         ) : (
