@@ -13,9 +13,7 @@ export default function Navbar() {
       <div className={`flex items-center justify-between xl:container mx-auto transition-all px-8 py-4`}>
         <div className={`flex justify-between items-center gap-8`}>
           <Link href="/" passHref>
-            <a>
-              <Image src={Logo} alt="Logo" width={64} height={32} priority />
-            </a>
+            <Image src={Logo} alt="Logo" width={64} height={32} priority />
           </Link>
 
           <div className={`lg:flex hidden gap-8 text-white font-sans-serif text-[16px]`}>

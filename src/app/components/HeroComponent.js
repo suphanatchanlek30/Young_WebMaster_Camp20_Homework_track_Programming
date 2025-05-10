@@ -1,4 +1,5 @@
-import Hero from "../../../public/Image_HomePage/Home_logo.svg";
+
+import Hero from "../../../public/Image_HomePage/Hero-2.svg";
 import Image from "next/image";
 
 export default function HeroComponent() {
@@ -8,7 +9,7 @@ export default function HeroComponent() {
     >
       <div className={`w-[300px] md:w-[315px] h-[166px] md:h-[166px] relative`}>
         <Image
-          src="https://ywc20.ywc.in.th/ywc20-logo-main.webp"
+          src={Hero}
           alt="Hero"
           className={`object-contain`}
           width={315}

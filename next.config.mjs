@@ -2,6 +2,7 @@
 const nextConfig = {
     devIndicators: {
     allowedDevOrigins: ['http://192.168.1.60'],
+    
   },
 };
 
