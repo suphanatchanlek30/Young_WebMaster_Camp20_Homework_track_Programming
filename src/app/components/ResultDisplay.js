@@ -64,7 +64,7 @@ const ResultModal = ({ result, onClose, selectedMajor }) => {
               Interviewee ID: {result.data.interviewRefNo}
             </p>
             <p className={`text-sm sm:text-base md:text-lg text-center font-bold text-[#190200] mb-4`}>
-              You&apos;ve qualified for the interview round in the <br />
+              You&apos;ve qualified in the interview round in the <br />
               <span className={`font-bold`}>
                 {getMajorName(result.data.major)}
               </span>{" "}
