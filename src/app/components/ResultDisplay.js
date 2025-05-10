@@ -2,8 +2,6 @@ import Image from "next/image";
 import Hero from "../../../public/Image_HomePage/Home_logo.svg";
 
 const ResultModal = ({ result, onClose, selectedMajor }) => {
-  
-
   const getMajorName = (majorValue) => {
     switch (majorValue) {
       case "web_design":
@@ -19,13 +17,13 @@ const ResultModal = ({ result, onClose, selectedMajor }) => {
     }
   };
 
-
   return (
     <div className={`fixed inset-0 bg-opacity-50 flex justify-center items-center m-4`}>
       <div className={`relative bg-white rounded-[32px] shadow-lg p-6 text-black mt-20 w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl`}>
         <button
           onClick={onClose}
           className={`absolute top-4 right-4 text-black hover:text-gray-300 focus:outline-none`}
+          aria-label="Close modal"
         >
           <svg className={`h-5 w-5 sm:h-6 sm:w-6 fill-current`} viewBox="0 0 20 20">
             <path
@@ -63,7 +61,7 @@ const ResultModal = ({ result, onClose, selectedMajor }) => {
               {result.data.firstName} {result.data.lastName}
             </p>
             <p className={`text-xs sm:text-sm md:text-base text-center font-medium text-[#190200]`}>
-              Interviewee ID : {result.data.interviewRefNo}
+              Interviewee ID: {result.data.interviewRefNo}
             </p>
             <p className={`text-sm sm:text-base md:text-lg text-center font-bold text-[#190200] mb-4`}>
               You've qualified for the interview round in the <br />
@@ -81,7 +79,9 @@ const ResultModal = ({ result, onClose, selectedMajor }) => {
                     `linear-gradient(to left, #FFB623 0%, #FF691D 14%, #F52222 50%, #F81A64 100%)`,
                 }}
                 onClick={() => {
+                  // Uncomment below line if you want to open resume or any other link
                   // window.open(result.data.resume, "_blank");
+                  alert('More details button clicked!');
                 }}
               >
                 More Details
