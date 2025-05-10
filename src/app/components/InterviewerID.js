@@ -37,7 +37,7 @@ export default function InterviewerID({ selectedMajor }) {
         "https://api.ywc20.ywc.in.th/homework/candidates",
         {
           headers: {
-            "x-reference-id": interviewRefNo,
+            "x-reference-id": "PG15",
           },
         }
       );
