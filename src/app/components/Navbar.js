@@ -17,7 +17,7 @@ export default function Navbar() {
 
           <div className={`lg:flex hidden gap-8 text-white font-sans-serif text-[16px]`}>
             <span onClick={scrollToTop} style={{ cursor: 'pointer' }}>Home</span> {/* ใช้ span และ onClick */}
-            <a href="/location">Location</a>
+            
           </div>
         </div>
 
